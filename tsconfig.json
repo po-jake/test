@@ -23,7 +23,6 @@
 
     "emitDecoratorMetadata": true,
     "skipDefaultLibCheck": true,
-    "allowSyntheticDefaultImports": true,
     "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
