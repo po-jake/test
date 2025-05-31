@@ -56,6 +56,14 @@ module.exports = tseslint.config(
       ],
       'simple-import-sort/exports': 'warn',
       'unused-imports/no-unused-imports': 'warn',
+
+      'no-undefined': 'error',
+      'no-var': 'error',
+      'prefer-const': 'error',
+      'id-length': 'error',
+      'newline-before-return': 'error',
+      'space-before-blocks': 'error',
+      'no-alert': 'error',
     },
   },
   {
