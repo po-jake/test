@@ -1,0 +1,35 @@
+<div class="library">
+  <div class="library__container library-card">
+    <div class="library__header">
+      <p class="library__title">Library</p>
+    </div>
+
+    <div class="library__content">
+      <div class="flex justify-center items-center gap-4">
+        <app-form-input
+          [(ngModel)]="searchTerm"
+          (ngModelChange)="onSearchChange()"
+          [placeholder]="'Type a book title or author\'s name...'"
+          [showIcon]="true"
+          [label]="'Search books or authors'"
+        >
+        </app-form-input>
+        <button mat-mini-fab (click)="addNewBook()">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+
+      @if (books().length) {
+        <div class="flex flex-wrap justify-center gap-2 p-4 max-h-[350px] overflow-auto">
+          @for (book of books(); track book) {
+            <app-book-card [book]="book" [index]="$index" />
+          }
+        </div>
+      } @else {
+        <div class="h-full">
+          <app-no-data/>
+        </div>
+      }
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>Delete book</h2>
+<mat-dialog-content>
+  Would you like to delete {{ data }}?
+</mat-dialog-content>
+<mat-dialog-actions class="flex gap-4">
+  <button mat-raised-button mat-dialog-close>No</button>
+  <button mat-raised-button mat-dialog-close [mat-dialog-close]="true">Yes</button>
+</mat-dialog-actions>

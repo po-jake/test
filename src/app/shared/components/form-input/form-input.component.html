@@ -1,0 +1,22 @@
+<mat-form-field appearance="outline" [style.width]="width" [class.hide-mat-error]="!required">
+  <mat-label>{{ label }}</mat-label>
+  <input
+    matInput
+    [placeholder]="placeholder"
+    [ngModel]="searchTerm"
+    (ngModelChange)="onInputChange($event)"
+    [type]="type"
+    (blur)="onTouch()"
+    [required]="required"
+  />
+  @if (showIcon) {
+    <mat-icon matSuffix>search</mat-icon>
+  }
+
+  @if (ngControl?.invalid && ngControl?.touched) {
+    <mat-error class="flex gap-2">
+      <mat-icon>error_outline</mat-icon>
+      <span>Field is required</span>
+    </mat-error>
+  }
+</mat-form-field>

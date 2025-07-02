@@ -1,0 +1,20 @@
+<h2 mat-dialog-title>{{ data.title }}</h2>
+<mat-dialog-content class="flex flex-col gap-4">
+  <div class="flex justify-between">
+    <div>
+      <img [src]="imageSrc" alt="image" class="w-[250px]">
+    </div>
+
+    <div class="flex flex-col gap-2 justify-center">
+      <span>Title: {{ data.title }}</span>
+      <span>Author: {{ data.author }}</span>
+      <span>Year: {{ data.year }}</span>
+    </div>
+  </div>
+  <div>
+    {{ data.description }}
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions class="flex gap-4">
+  <button mat-raised-button mat-dialog-close [mat-dialog-close]="true">Close</button>
+</mat-dialog-actions>

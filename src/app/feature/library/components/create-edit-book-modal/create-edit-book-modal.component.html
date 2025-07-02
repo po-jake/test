@@ -1,0 +1,36 @@
+<h2 mat-dialog-title>{{ data ? 'Edit' : 'Add' }} book</h2>
+<mat-dialog-content class="flex flex-col gap-2 p-4" [formGroup]="form">
+  <div class="flex gap-2">
+    @if (imageSrc) {
+      <div class="flex flex-col gap-2">
+        <img [src]="imageSrc" alt="Preview" width="300" />
+        <button mat-raised-button (click)="removeFile()">Remove</button>
+      </div>
+    } @else {
+      <ngx-dropzone class="h-[220px]" (change)="onSelect($event)" [multiple]="false" accept="image/*">
+        <ngx-dropzone-label>
+          Drag and drop an image here or click to select
+        </ngx-dropzone-label>
+      </ngx-dropzone>
+    }
+    <div class="flex flex-col gap-2">
+      <app-form-input formControlName="author" [label]="'Author'" [required]="true"></app-form-input>
+      <app-form-input formControlName="title" [label]="'Title'" [required]="true"></app-form-input>
+      <app-form-input formControlName="year" [label]="'Year'" [type]="'number'" [required]="true"></app-form-input>
+    </div>
+  </div>
+
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <textarea matInput
+              formControlName="description"
+              cdkTextareaAutosize
+              #autosize="cdkTextareaAutosize"
+              cdkAutosizeMinRows="1"
+              cdkAutosizeMaxRows="5"></textarea>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions class="flex gap-2">
+  <button mat-raised-button mat-dialog-close>Close</button>
+  <button mat-raised-button mat-dialog-close (click)="confirm()" [disabled]="form.invalid">{{ data ? 'Edit' : 'Add' }} book</button>
+</mat-dialog-actions>

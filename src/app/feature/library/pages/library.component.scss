@@ -1,0 +1,32 @@
+.library {
+  height: 100dvh;
+  background-image: url("/assets/images/background-library.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    height: 40%;
+    width: 70%;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    color: #000000;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+}

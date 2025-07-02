@@ -1,0 +1,21 @@
+<div class="book-card" [style.background-color]="'' | randomLightColor" [@fadeInOut]="{ value: '', params: { delay: index * 300 } }">
+  <div (click)="openDetailBook()" class="cursor-pointer">
+    <div class="book-card__header">
+      <h1>{{ book.title }}</h1>
+    </div>
+
+    <div class="book-card__content">
+      <h2>{{ book.author }}</h2>
+      <h2>{{ book.year }}</h2>
+    </div>
+  </div>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu" class="flex">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+</div>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="editBook()">Edit</button>
+  <button mat-menu-item (click)="deleteBook()">Delete</button>
+</mat-menu>
